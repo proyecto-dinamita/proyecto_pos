@@ -8,6 +8,17 @@ Este proyecto se realiza utilizando los siguientes aspectos:
  - **Framework:** [Página de Laravel](https://laravel.com)
  - **Librería 1:** [Página de Bootstrap](https://getbootstrap.com)
 
+ ### Para una correcta instalación de desarrollo
+ - Recordar iniciar sesión en una cuenta GitHub ó emplear una llave ssh [GUIA SSH](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+ - Crear el archivo .env y configurar el entorno, para ello copiar el ejemplo que se posee en el repositorio y a la copia realizarle los cambios requeridos.
+ Recordar realizar la instalación de los componentes requeridos con:
+ - composer install
+ - npm install
+ - npm run dev
+ - npm run build
+ - php artisan key:generate
+ - php artisan migrate
+
 ## Enlaces del proyecto
  - [Sistema](https://posenlinea.net)
  - [Repositorio](https://github.com/proyecto-dinamita/proyecto_pos)
