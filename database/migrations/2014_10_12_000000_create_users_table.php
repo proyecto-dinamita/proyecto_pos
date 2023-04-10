@@ -14,14 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
-            // Formas de iniciar sesión
             $table->string('email')->unique();
-            $table->string('username')->nullable()->unique();
-            $table->string('usercode')->nullable()->unique();
-
-            $table->string('photo')->nullable();
             $table->string('phone')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
