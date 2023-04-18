@@ -53,13 +53,19 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="login" class="form-label">Email/User/Telefono'</label>
-                                    <input class="form-control" name="login" type="text" id="login" required="" placeholder="Ingresa tu email, usuario o telefono">
+                                    <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Ingresa con email, usuario o telefono">
+                                    @error('login')
+                                    <span class="text-danger"> El usuario o contraseña es incorrecto </span>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="password" name="password" class="form-control" placeholder="Ingresa tu Contraseña">
+                                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password">
+                                        @error('password')
+                                        <span class="text-danger"> El usuario o contraseña es incorrecto </span>
+                                        @enderror
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>
@@ -107,7 +113,7 @@
                         <div class="col-12 text-center">
                             <p> <a href="auth-recoverpw.html" class="text-white-50 ms-1">Forgot your password?</a></p> 
                     -->
-                    <p class="text-white-50">Aun no tienes cuenta? <a href="auth-register.html" class="text-white ms-1"><b>Registrate</b></a></p>
+                    <p class="text-white-50">Aun no tienes cuenta? <a href="/register" class="text-white ms-1"><b>Registrate</b></a></p>
                 </div> <!-- end col -->
             </div>
             <!-- end row -->
@@ -119,7 +125,6 @@
     <!-- end container -->
     </div>
     <!-- end page -->
-
 
     <footer class="footer footer-alt">
         2023 - <script>
