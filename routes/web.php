@@ -10,8 +10,8 @@ use App\Http\Controllers\AdminController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -29,12 +29,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/admin/logout', [AdminController::class, 'AdminDestroy'])->name('admin.logout');
 
-Route::get('/logout', [AdminController::class, 'AdminlogoutPage'])->name('admin.logout.page');
+Route::get('/logout', [AdminController::class, 'AdminLogoutPage'])->name('admin.logout.page');
 
-Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+Route::middleware(['auth'])->group(function () {
 
-Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+
+    Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+
+    Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
+
+    Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
+}); // End User Middleware 
