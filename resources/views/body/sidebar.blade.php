@@ -1,19 +1,14 @@
 <div class="left-side-menu">
-
     <div class="h-100" data-simplebar>
 
         <!-- User box -->
-
-
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-
             <ul id="side-menu">
-
                 <li class="menu-title">Menú</li>
 
                 <li>
-                    <a href="{{  url('/dashboard') }}">
+                    <a href="{{ url('/dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Tablero </span>
                     </a>
@@ -21,22 +16,19 @@
 
                 <li class="menu-title mt-2">Aplicaciones</li>
 
-
-
-
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span> Ecommerce </span>
+                        <span>Empleados</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarEcommerce">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="ecommerce-dashboard.html">Dashboard</a>
+                                <a href="{{ route('all.employee') }}">Lista</a>
                             </li>
                             <li>
-                                <a href="ecommerce-products.html">Products</a>
+                                <a href="ecommerce-products.html">Agregar nuevo</a>
                             </li>
 
                         </ul>
@@ -112,7 +104,6 @@
 
     </div>
     <!-- End Sidebar -->
-
     <div class="clearfix"></div>
 
 </div>
