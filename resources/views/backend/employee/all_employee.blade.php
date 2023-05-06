@@ -14,7 +14,8 @@
                                 <li class="breadcrumb-item active">Lista</li>
                             </ol>
                             <ol class="breadcrumb m-0">
-                                <a href="" class="btn btn-success rounded-pill waves efect waves-light">Nuevo
+                                <a href="{{ route('add.employee') }}"
+                                    class="btn btn-success rounded-pill waves efect waves-light">Nuevo
                                     Empleado</a>
                             </ol>
                         </div>
@@ -43,7 +44,7 @@
                                 <tbody>
                                     @foreach ($employees as $key => $employee)
                                         <tr>
-                                            <td>{{ $key }}</td>
+                                            <td>{{ $key + 1 }}</td>
                                             <td><img src="{{ asset($employee->image) }}" alt="image"
                                                     style="width: 50px; height: 40px;"></td>
                                             <td>{{ $employee->name }}</td>
@@ -51,10 +52,11 @@
                                             <td>{{ $employee->phone }}</td>
                                             <td>{{ $employee->salary }}</td>
                                             <td>
-                                                <a href=""
-                                                    class="btn btn-blue rounded-pill waves efect waves-light">Edit</a>
-                                                <a href=""
-                                                    class="btn btn-danger rounded-pill waves efect waves-light">Delete</a>
+                                                <a href="{{ route('edit.employee', $employee->id) }}"
+                                                    class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+                                                <a href="{{ route('delete.employee', $employee->id) }}"
+                                                    class="btn btn-danger rounded-pill waves-effect waves-light"
+                                                    id="delete">Eliminar</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -28,7 +28,7 @@
                                 <a href="{{ route('all.employee') }}">Lista</a>
                             </li>
                             <li>
-                                <a href="ecommerce-products.html">Agregar nuevo</a>
+                                <a href="{{ route('add.employee') }}">Agregar nuevo</a>
                             </li>
 
                         </ul>
