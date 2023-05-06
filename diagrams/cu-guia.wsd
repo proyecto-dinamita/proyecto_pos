@@ -1,0 +1,24 @@
+@startuml "Caso de uso - ejemplo"
+!theme bluegray
+
+left to right direction
+
+actor Encargado as enc
+actor Cliente as cli
+
+package Restaurant {
+    usecase "Asingar productos" as UC1
+    usecase "Establecer precios" as UC2
+    usecase "Establecer cantidades" as UC3
+    usecase "Confirmar venta" as UC4
+    usecase "Solicitar productos" as UC5
+}
+
+cli --> UC5
+
+enc --> UC1
+enc --> UC2
+enc --> UC3
+enc --> UC4
+
+@enduml

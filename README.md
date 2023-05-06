@@ -33,6 +33,9 @@ Recordar realizar la instalación de los componentes requeridos con:
  - php artisan key:generate
  - php artisan migrate
 
+Las siguientes líneas son de librerías y si da problemas ejecutarlas *(Opcional)*
+- php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
+
 ## Enlaces del proyecto
  - [Sistema](https://posenlinea.net)
  - [Repositorio](https://github.com/proyecto-dinamita/proyecto_pos)
