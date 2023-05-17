@@ -13,11 +13,7 @@ use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
-<<<<<<< HEAD
-
-=======
 use App\Http\Controllers\Backend\ProductController;
->>>>>>> 243e588 (products and categories)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
