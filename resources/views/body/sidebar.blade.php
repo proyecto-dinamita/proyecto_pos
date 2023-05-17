@@ -79,15 +79,54 @@
                 </li>
 
                 <li>
+                    <a href="#sidebarSupplier" data-bs-toggle="collapse">
+                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <span> Proveedores </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSupplier">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.supplier') }}">Mostrar Proveedores</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.supplier') }}">Agregar Proveedores</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#category" data-bs-toggle="collapse">
                         <i class="mdi mdi-email-multiple-outline"></i>
-                        <span> Category </span>
+                        <span> Categorias </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="category">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.category') }}">All Category </a>
+                                <a href="{{ route('all.category') }}">Mostrar Categorias</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#product" data-bs-toggle="collapse">
+                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <span> Products </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="product">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.product') }}">Mostrar Productos</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('add.product') }}">Agregar Productos</a>
                             </li>
 
                         </ul>

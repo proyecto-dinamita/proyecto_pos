@@ -13,7 +13,11 @@ use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\Backend\ProductController;
+>>>>>>> 243e588 (products and categories)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +61,20 @@ Route::middleware('auth')->group(function () {
         Route::patch('/profile', 'update')->name('profile.update');
         Route::delete('/profile', 'destroy')->name('profile.destroy');
     });
+    ///Proveedores Rutas 
+    Route::controller(SupplierController::class)->group(function () {
+
+        Route::get('/all/supplier', 'AllSupplier')->name('all.supplier');
+        Route::get('/add/supplier', 'AddSupplier')->name('add.supplier');
+        Route::post('/store/supplier', 'StoreSupplier')->name('supplier.store');
+        Route::get('/edit/supplier/{id}', 'EditSupplier')->name('edit.supplier');
+        Route::post('/update/supplier', 'UpdateSupplier')->name('supplier.update');
+        Route::get('/delete/supplier/{id}', 'DeleteSupplier')->name('delete.supplier');
+        Route::get('/details/supplier/{id}','DetailsSupplier')->name('details.supplier');
+    });
+
+    ///Categorias Rutas 
+    Route::controller(CategoryController::class)->group(function () {
 
     // Employee routes
     Route::controller(EmployeeController::class)->group(function () {
@@ -76,4 +94,15 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/category', 'UpdateCategory')->name('category.update');
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
-}); // End User Middleware
+
+    ///Productos Rutas 
+    Route::controller(ProductController::class)->group(function () {
+
+        Route::get('/all/product', 'AllProduct')->name('all.product');
+        Route::get('/add/product', 'AddProduct')->name('add.product');
+        Route::post('/store/product', 'StoreProduct')->name('product.store');
+        Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
+        Route::post('/update/product', 'UdateProduct')->name('product.update');
+        Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
+    });
+}); // End User Middleware 
