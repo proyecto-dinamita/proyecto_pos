@@ -30,7 +30,7 @@
                         <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
-                                    <th>Sl</th>
+                                    <th>No.</th>
                                     <th>Categoria </th>
                                     <th>Accion</th>
                                 </tr>
