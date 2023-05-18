@@ -13,11 +13,11 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Details Supplier</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Detalles proveedor</a></li>
 
                         </ol>
                     </div>
-                    <h4 class="page-title">Details Supplier</h4>
+                    <h4 class="page-title">Detalles proveedor</h4>
                 </div>
             </div>
         </div>
@@ -37,20 +37,20 @@
 
                                 <input type="hidden" name="id" value="{{ $supplier->id }}">
 
-                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Details Supplier</h5>
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Detalles</h5>
 
                                 <div class="row">
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Name</label>
+                                            <label for="firstname" class="form-label">Nombre</label>
                                             <p class="text-danger">{{ $supplier->name }}</p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Email</label>
+                                            <label for="firstname" class="form-label">Email</label>
                                             <p class="text-danger">{{ $supplier->email }}</p>
 
                                         </div>
@@ -58,35 +58,35 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Phone </label>
+                                            <label for="firstname" class="form-label">Telefono</label>
                                             <p class="text-danger">{{ $supplier->phone }}</p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Address </label>
+                                            <label for="firstname" class="form-label">Dirección</label>
                                             <p class="text-danger">{{ $supplier->address }}</p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Shop Name </label>
+                                            <label for="firstname" class="form-label">Tienda</label>
                                             <p class="text-danger">{{ $supplier->shopname }}</p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier Type </label>
+                                            <label for="firstname" class="form-label">Tipo de distribuidor</label>
                                             <p class="text-danger">{{ $supplier->type }}</p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Account Holder </label>
+                                            <label for="firstname" class="form-label">Dueño de cuenta</label>
 
 
                                             <p class="text-danger">{{ $supplier->account_holder }}</p>
@@ -95,7 +95,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Account Number </label>
+                                            <label for="firstname" class="form-label">Numero de cuenta</label>
 
                                             <p class="text-danger">{{ $supplier->account_number }}</p>
                                         </div>
@@ -103,7 +103,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Bank Name </label>
+                                            <label for="firstname" class="form-label">Nombre de banco</label>
 
                                             <p class="text-danger">{{ $supplier->bank_name }}</p>
                                         </div>
@@ -111,7 +111,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Bank Branch </label>
+                                            <label for="firstname" class="form-label">Sucursal</label>
 
                                             <p class="text-danger">{{ $supplier->bank_branch }}</p>
                                         </div>
@@ -119,7 +119,7 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Supplier City </label>
+                                            <label for="firstname" class="form-label">Ciudad</label>
                                             <p class="text-danger">{{ $supplier->city }}</p>
                                         </div>
                                     </div>

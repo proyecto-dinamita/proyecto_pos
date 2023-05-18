@@ -18,7 +18,7 @@
 
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
-                        <i class="mdi mdi-cart-outline"></i>
+                        <i class="mdi mdi-badge-account-outline"></i>
                         <span>Empleados</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -38,17 +38,18 @@
                 <li>
                     <a href="#sidebarCrm" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> CRM </span>
+                        <span> Clientes </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarCrm">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="crm-dashboard.html">Dashboard</a>
+                                <a href="{{ route('all.customer') }}">Clientes</a>
                             </li>
                             <li>
-                                <a href="crm-contacts.html">Contacts</a>
+                                <a href="{{ route('add.customer') }}">Agregar clientes</a>
                             </li>
+
 
                         </ul>
                     </div>
@@ -80,7 +81,7 @@
 
                 <li>
                     <a href="#sidebarSupplier" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="mdi mdi-truck-fast"></i>
                         <span> Proveedores </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -98,8 +99,49 @@
                 </li>
 
                 <li>
+                    <a href="#sidebarSalary" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cash-multiple"></i>
+                        <span> Salarios </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSalary">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('add.advance.salary') }}">Agregar adelanto de salario</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('all.advance.salary') }}">Todos los adelantos de salario</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('pay.salary') }}">Pagar salarios</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('month.salary') }}">Ultimo mes pagado</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#attendence" data-bs-toggle="collapse">
+                        <i class="mdi mdi-check-underline-circle-outline"></i>
+                        <span> Asistencias de Empleados </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="attendence">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('employee.attend.list') }}">Asistencia de Empleados</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#category" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="mdi mdi-shape-plus"></i>
                         <span> Categorias </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -115,8 +157,8 @@
 
                 <li>
                     <a href="#product" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
-                        <span> Products </span>
+                        <i class="mdi mdi-basket-outline"></i>
+                        <span> Productos </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="product">
@@ -138,16 +180,22 @@
                 <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-circle-outline"></i>
-                        <span> Paginas Autorizadas </span>
+                        <span> Gastos </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarAuth">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="auth-login.html">Log In</a>
+                                <a href="{{ route('add.expense') }}">Agregar Gasto</a>
                             </li>
                             <li>
-                                <a href="auth-login-2.html">Log In 2</a>
+                                <a href="{{ route('today.expense') }}">Gastos del dia</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('month.expense') }}">Gastos mensuales</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('year.expense') }}">Gastos anuales</a>
                             </li>
                         </ul>
                     </div>

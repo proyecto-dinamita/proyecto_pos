@@ -13,17 +13,17 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Editar proveedor</a></li>
-
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Agregar cliente</a></li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Editar proveedor</h4>
+                    <h4 class="page-title">Agregar cliente</h4>
                 </div>
             </div>
         </div>
         <!-- end page title -->
 
         <div class="row">
+
 
             <div class="col-lg-8 col-xl-12">
                 <div class="card">
@@ -32,19 +32,17 @@
                         <!-- end timeline content-->
 
                         <div class="tab-pane" id="settings">
-                            <form method="post" action="{{ route('supplier.update') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('customer.store') }}" enctype="multipart/form-data">
                                 @csrf
 
-                                <input type="hidden" name="id" value="{{ $supplier->id }}">
-
-                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar</h5>
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Agregar cliente</h5>
 
                                 <div class="row">
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Nombre</label>
-                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $supplier->name }}">
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
                                             @error('name')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -54,7 +52,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $supplier->email }}">
+                                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
                                             @error('email')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -64,7 +62,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Telefono</label>
-                                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ $supplier->phone }}">
+                                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror">
                                             @error('phone')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -73,8 +71,8 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Dirección</label>
-                                            <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ $supplier->address }}">
+                                            <label for="firstname" class="form-label">Direccion</label>
+                                            <input type="text" name="address" class="form-control @error('address') is-invalid @enderror">
                                             @error('address')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -84,7 +82,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Tienda</label>
-                                            <input type="text" name="shopname" class="form-control @error('shopname') is-invalid @enderror" value="{{ $supplier->shopname }}">
+                                            <input type="text" name="shopname" class="form-control @error('shopname') is-invalid @enderror">
                                             @error('shopname')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -93,23 +91,8 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Tipo de distribuidor</label>
-                                            <select name="type" class="form-select @error('type') is-invalid @enderror" id="example-select">
-                                                <option selected disabled>Select Type </option>
-                                                <option value="Distributor" {{ $supplier->type == 'Distributor' ? 'selected' : '' }}>Distributor </option>
-                                                <option value="Whole Seller" {{ $supplier->type == 'Whole Seller' ? 'selected' : '' }}>Whole Seller </option>
-                                            </select>
-                                            @error('type')
-                                            <span class="text-danger"> {{ $message }} </span>
-                                            @enderror
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
                                             <label for="firstname" class="form-label">Nombre de cuenta</label>
-                                            <input type="text" name="account_holder" class="form-control @error('account_holder') is-invalid @enderror" value="{{ $supplier->account_holder }}">
+                                            <input type="text" name="account_holder" class="form-control @error('account_holder') is-invalid @enderror">
                                             @error('account_holder')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -119,7 +102,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Numero de cuenta</label>
-                                            <input type="text" name="account_number" class="form-control @error('account_number') is-invalid @enderror" value="{{ $supplier->account_number }}">
+                                            <input type="text" name="account_number" class="form-control @error('account_number') is-invalid @enderror">
                                             @error('account_number')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -128,8 +111,8 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="firstname" class="form-label">Nombre de banco</label>
-                                            <input type="text" name="bank_name" class="form-control @error('bank_name') is-invalid @enderror" value="{{ $supplier->bank_name }}">
+                                            <label for="firstname" class="form-label">Nombre de Banco</label>
+                                            <input type="text" name="bank_name" class="form-control @error('bank_name') is-invalid @enderror">
                                             @error('bank_name')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -139,7 +122,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Sucursal</label>
-                                            <input type="text" name="bank_branch" class="form-control @error('bank_branch') is-invalid @enderror" value="{{ $supplier->bank_branch }}">
+                                            <input type="text" name="bank_branch" class="form-control @error('bank_branch') is-invalid @enderror">
                                             @error('bank_branch')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -149,7 +132,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="firstname" class="form-label">Ciudad</label>
-                                            <input type="text" name="city" class="form-control @error('city') is-invalid @enderror" value="{{ $supplier->city }}">
+                                            <input type="text" name="city" class="form-control @error('city') is-invalid @enderror">
                                             @error('city')
                                             <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -169,10 +152,9 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label"> </label>
-                                            <img id="showImage" src="{{  asset($supplier->image) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                            <img id="showImage" src="{{  url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
                                         </div>
                                     </div> <!-- end col -->
-
                                 </div> <!-- end row -->
 
                                 <div class="text-end">
@@ -181,8 +163,6 @@
                             </form>
                         </div>
                         <!-- end settings content-->
-
-
                     </div>
                 </div> <!-- end card-->
 

@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ExpenseController;
 
 /* 
 |--------------------------------------------------------------------------
@@ -51,17 +52,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 
-    /// Employee All Route 
+    /// Empleados rutas
     Route::controller(EmployeeController::class)->group(function () {
 
         Route::get('/all/employee', 'AllEmployee')->name('all.employee');
         Route::get('/add/employee', 'AddEmployee')->name('add.employee');
         Route::post('/store/employee', 'StoreEmployee')->name('employee.store');
         Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee');
-        Route::post('/update/employee', 'UpdateEmployee')->name('employee.update');
+        Route::post('/update/employee','UpdateEmployee')->name('employee.update');
         Route::get('/delete/employee/{id}', 'DeleteEmployee')->name('delete.employee');
     });
-    /// Customer All Route 
+
+    /// Clientes rutas 
     Route::controller(CustomerController::class)->group(function () {
 
         Route::get('/all/customer', 'AllCustomer')->name('all.customer');
@@ -72,7 +74,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
     });
 
-    /// Supplier All Route 
+    /// Proveedores rutas
     Route::controller(SupplierController::class)->group(function () {
 
         Route::get('/all/supplier', 'AllSupplier')->name('all.supplier');
@@ -84,7 +86,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/details/supplier/{id}', 'DetailsSupplier')->name('details.supplier');
     });
 
-    /// Advance Salary All Route 
+    /// Salarios adelantos rutas
     Route::controller(SalaryController::class)->group(function () {
         Route::get('/add/advance/salary', 'AddAdvanceSalary')->name('add.advance.salary');
         Route::post('/advance/salary/store', 'AdvanceSalaryStore')->name('advance.salary.store');
@@ -94,7 +96,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/advance/salary/update', 'AdvanceSalaryUpdate')->name('advance.salary.update');
     });
 
-    /// Pay Salary All Route 
+    /// Pago de salarios rutas
     Route::controller(SalaryController::class)->group(function () {
         Route::get('/pay/salary', 'PaySalary')->name('pay.salary');
         Route::get('/pay/now/salary/{id}', 'PayNowSalary')->name('pay.now.salary');
@@ -102,7 +104,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/month/salary', 'MonthSalary')->name('month.salary');
     });
 
-    ///Attendence All Route 
+    /// Asistencia rutas
     Route::controller(AttendenceController::class)->group(function () {
         Route::get('/employee/attend/list', 'EmployeeAttendenceList')->name('employee.attend.list');
         Route::get('/add/employee/attend', 'AddEmployeeAttendence')->name('add.employee.attend');
@@ -111,7 +113,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/view/employee/attend/{date}', 'ViewEmployeeAttendence')->name('employee.attend.view');
     });
 
-    ///Category All Route 
+    /// categorias productos rutas 
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/all/category', 'AllCategory')->name('all.category');
         Route::post('/store/category', 'StoreCategory')->name('category.store');
@@ -120,7 +122,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
 
-    ///Product All Route 
+    /// Productos rutas
     Route::controller(ProductController::class)->group(function () {
 
         Route::get('/all/product', 'AllProduct')->name('all.product');
@@ -129,5 +131,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/update/product', 'UdateProduct')->name('product.update');
         Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
+        Route::get('/barcode/product/{id}', 'BarcodeProduct')->name('barcode.product');
+    });
+
+    /// Gastos rutas
+    Route::controller(ExpenseController::class)->group(function () {
+
+        Route::get('/add/expense', 'AddExpense')->name('add.expense');
+        Route::post('/store/expense', 'StoreExpense')->name('expense.store');
+        Route::get('/today/expense', 'TodayExpense')->name('today.expense');
+        Route::get('/edit/expense/{id}', 'EditExpense')->name('edit.expense');
+        Route::post('/update/expense', 'UpdateExpense')->name('expense.update');
+        Route::get('/month/expense', 'MonthExpense')->name('month.expense');
+        Route::get('/year/expense', 'YearExpense')->name('year.expense');
     });
 }); // End User Middleware 

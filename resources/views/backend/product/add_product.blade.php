@@ -13,11 +13,11 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Product</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Agregar producto</a></li>
 
                         </ol>
                     </div>
-                    <h4 class="page-title">Add Product</h4>
+                    <h4 class="page-title">Agregar producto</h4>
                 </div>
             </div>
         </div>
@@ -35,13 +35,13 @@
                             <form id="myForm" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
                                 @csrf
 
-                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Product</h5>
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Agregar</h5>
 
                                 <div class="row">
 
                                     <div class="col-md-6">
                                         <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Product Name</label>
+                                            <label for="firstname" class="form-label">Nombre</label>
                                             <input type="text" name="product_name" class="form-control">
 
                                         </div>
@@ -49,9 +49,9 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Category </label>
+                                            <label for="firstname" class="form-label">Categoria</label>
                                             <select name="category_id" class="form-select" id="example-select">
-                                                <option selected disabled>Select Category </option>
+                                                <option selected disabled>Seleccione la categoria</option>
                                                 @foreach($category as $cat)
                                                 <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                                                 @endforeach
@@ -62,9 +62,9 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Supplier </label>
+                                            <label for="firstname" class="form-label">Proveedor </label>
                                             <select name="supplier_id" class="form-select" id="example-select">
-                                                <option selected disabled>Select Supplier </option>
+                                                <option selected disabled>Seleccione al proveedor</option>
                                                 @foreach($supplier as $sup)
                                                 <option value="{{ $sup->id }}">{{ $sup->name }}</option>
                                                 @endforeach
@@ -74,82 +74,85 @@
                                     </div>
 
                                     <div class="col-md-6">
+                                        
+                                    <!--    
                                         <div class="form-group mb-3">
                                             <label for="firstname" class="form-label">Product Code </label>
                                             <input type="text" name="product_code" class="form-control ">
 
                                         </div>
                                     </div>
+                                     -->
 
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Product Garage </label>
-                                            <input type="text" name="product_garage" class="form-control ">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Almacenamiento del producto</label>
+                                                <input type="text" name="product_garage" class="form-control ">
 
+                                            </div>
                                         </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Tienda</label>
+                                                <input type="text" name="product_store" class="form-control ">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Fecha compra</label>
+                                                <input type="date" name="buying_date" class="form-control ">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Fecha vencimiento</label>
+                                                <input type="date" name="expire_date" class="form-control ">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Precio Compra</label>
+                                                <input type="text" name="buying_price" class="form-control ">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstname" class="form-label">Precio venta</label>
+                                                <input type="text" name="selling_price" class="form-control ">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group mb-3">
+                                                <label for="example-fileinput" class="form-label">Imagen del producto</label>
+                                                <input type="file" name="product_image" id="image" class="form-control">
+
+                                            </div>
+                                        </div> <!-- end col -->
+
+                                        <div class="col-md-12">
+                                            <div class="form-group mb-3">
+                                                <label for="example-fileinput" class="form-label"> </label>
+                                                <img id="showImage" src="{{  url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                            </div>
+                                        </div> <!-- end col -->
+
+                                    </div> <!-- end row -->
+
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Guardar</button>
                                     </div>
-
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Product Store </label>
-                                            <input type="text" name="product_store" class="form-control ">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Buying Date </label>
-                                            <input type="date" name="buying_date" class="form-control ">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Expire Date </label>
-                                            <input type="date" name="expire_date" class="form-control ">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Buying Price </label>
-                                            <input type="text" name="buying_price" class="form-control ">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="firstname" class="form-label">Selling Price </label>
-                                            <input type="text" name="selling_price" class="form-control ">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="example-fileinput" class="form-label">Customer Image</label>
-                                            <input type="file" name="product_image" id="image" class="form-control">
-
-                                        </div>
-                                    </div> <!-- end col -->
-
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="example-fileinput" class="form-label"> </label>
-                                            <img id="showImage" src="{{  url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
-                                        </div>
-                                    </div> <!-- end col -->
-
-                                </div> <!-- end row -->
-
-                                <div class="text-end">
-                                    <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
-                                </div>
                             </form>
                         </div>
                         <!-- end settings content-->
@@ -179,9 +182,6 @@
                 supplier_id: {
                     required: true,
                 },
-                product_code: {
-                    required: true,
-                },
                 product_garage: {
                     required: true,
                 },
@@ -204,40 +204,37 @@
                     required: true,
                 },
             },
-            messages: {
+            messages :{
                 product_name: {
-                    required: 'Please Enter Product Name',
-                },
+                    required : 'Por favor ingrese el nombre del producto',
+                }, 
                 category_id: {
-                    required: 'Please Select Category',
+                    required : 'Por favor seleccione una categoria',
                 },
                 supplier_id: {
-                    required: 'Please Select Supplier',
-                },
-                product_code: {
-                    required: 'Please Enter Product Code',
+                    required : 'Seleccione al proveedor',
                 },
                 product_garage: {
-                    required: 'Please Enter Product Garage',
+                    required : 'Ingrese el almacenamiento',
                 },
                 product_store: {
-                    required: 'Please Enter Product Store',
+                    required : 'Ingrese la tienda del producto',
                 },
                 buying_date: {
-                    required: 'Please Slect Buying Date',
+                    required : 'Ingrese la fecha de compra',
                 },
                 expire_date: {
-                    required: 'Please Slect Expire Date',
+                    required : 'Ingrese la fecha de vencimiento',
                 },
                 buying_price: {
-                    required: 'Please Enter Buying Price',
+                    required : 'Ingrese el precio de compra',
                 },
                 selling_price: {
-                    required: 'Please Enter Selling Price',
+                    required : 'Ingrese el procio de venta',
                 },
                 product_image: {
-                    required: 'Please Select Product Image',
-                },
+                    required : 'Seleccione la imagen del producto',
+                }, 
             },
             errorElement: 'span',
             errorPlacement: function(error, element) {

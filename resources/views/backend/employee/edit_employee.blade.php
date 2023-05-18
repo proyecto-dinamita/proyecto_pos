@@ -33,7 +33,7 @@
                             <!-- end timeline content-->
 
                             <div class="tab-pane" id="settings">
-                                <form method="post" action="{{ route('update.employee') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('employee.update') }}" enctype="multipart/form-data">
                                     @csrf
 
                                     <input type="hidden" name="id" value="{{ $employee->id }}">
