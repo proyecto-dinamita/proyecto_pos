@@ -34,13 +34,13 @@
 
                             <div class="text-center w-75 m-auto">
                                 <div class="auth-logo">
-                                    <a href="index.html" class="logo logo-dark text-center">
+                                    <a href="{{ route('dashboard') }}" class="logo logo-dark text-center">
                                         <span class="logo-lg">
                                             <img src="{{  asset('backend/assets/images/logo-light1.png') }}" alt="" height="175">
                                         </span>
                                     </a>
 
-                                    <a href="index.html" class="logo logo-light text-center">
+                                    <a href="{{ route('dashboard') }}" class="logo logo-light text-center">
                                         <span class="logo-lg">
                                             <img src="{{  asset('backend/assets/images/logo-light1.png') }}" alt="" height="175">
                                         </span>

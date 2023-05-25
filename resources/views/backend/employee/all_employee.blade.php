@@ -42,17 +42,19 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($employees as $key => $employee)
+                            <tbody>
+                                @foreach($employee as $key=> $item)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td><img src="{{ asset($employee->image) }}" alt="image" style="width: 50px; height: 40px;"></td>
-                                    <td>{{ $employee->name }}</td>
-                                    <td>{{ $employee->email }}</td>
-                                    <td>{{ $employee->phone }}</td>
-                                    <td>{{ $employee->salary }}</td>
+                                    <td>{{ $key+1 }}</td>
+                                    <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->phone }}</td>
+                                    <td>{{ $item->salary }}</td>
                                     <td>
-                                        <a href="{{ route('edit.employee', $employee->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
-                                        <a href="{{ route('delete.employee', $employee->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Eliminar</a>
+                                        <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+                                        <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+
                                     </td>
                                 </tr>
                                 @endforeach
