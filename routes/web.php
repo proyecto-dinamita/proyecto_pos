@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
+use App\Http\Controllers\Backend\PosController;
+use App\Http\Controllers\Backend\OrderController;
 
 /* 
 |--------------------------------------------------------------------------
@@ -59,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/add/employee', 'AddEmployee')->name('add.employee');
         Route::post('/store/employee', 'StoreEmployee')->name('employee.store');
         Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee');
-        Route::post('/update/employee','UpdateEmployee')->name('employee.update');
+        Route::post('/update/employee', 'UpdateEmployee')->name('employee.update');
         Route::get('/delete/employee/{id}', 'DeleteEmployee')->name('delete.employee');
     });
 
@@ -145,4 +147,25 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/month/expense', 'MonthExpense')->name('month.expense');
         Route::get('/year/expense', 'YearExpense')->name('year.expense');
     });
+
+    ///POS rutas 
+    Route::controller(PosController::class)->group(function () {
+        Route::get('/pos', 'Pos')->name('pos');
+        Route::post('/add-cart', 'AddCart');
+        Route::get('/allitem', 'AllItem');
+        Route::post('/cart-update/{rowId}', 'CartUpdate');
+        Route::get('/cart-remove/{rowId}', 'CartRemove');
+        Route::post('/create-invoice', 'CreateInvoice');
+    });
+
+    ///Ordenes Rutas 
+    Route::controller(OrderController::class)->group(function(){
+        Route::post('/final-invoice','FinalInvoice');
+        Route::get('/pending/order','PendingOrder')->name('pending.order');
+        Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
+        Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
+        Route::get('/complete/order','CompleteOrder')->name('complete.order');
+        Route::get('/stock','StockManage')->name('stock.manage');
+       });
+
 }); // End User Middleware 

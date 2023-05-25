@@ -106,7 +106,7 @@
 
               <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Tienda</label>
+            <label for="firstname" class="form-label">Stock</label>
             <input type="text" name="product_store" class="form-control "  value="{{ $product->product_store }}"   >
 
            </div>

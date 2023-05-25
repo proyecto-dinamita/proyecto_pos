@@ -1,7 +1,7 @@
 <div class="left-side-menu">
     <div class="h-100" data-simplebar>
 
-        <!-- User box -->
+        <!-- User box 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
             <ul id="side-menu">
@@ -11,6 +11,14 @@
                     <a href="{{ url('/dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Tablero </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('pos') }}">
+                        <!-- <span class="badge bg-pink float-end">POS</span>-->
+                        <i class="mdi mdi-cart"></i>
+                        <span> POS </span>
                     </a>
                 </li>
 
@@ -169,6 +177,43 @@
 
                             <li>
                                 <a href="{{ route('add.product') }}">Agregar Productos</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#orders" data-bs-toggle="collapse">
+                        <i class="mdi mdi-file-document"></i>
+                        <span> Ordenes de compra </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="orders">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('pending.order') }}">Ordenes pendientes </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('complete.order') }}">Ordenes completas </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li>
+                    <a href="#stock" data-bs-toggle="collapse">
+                        <i class="mdi mdi-counter"></i>
+                        <span> Manejo de inventario </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="stock">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('stock.manage') }}">Inventario </a>
                             </li>
 
                         </ul>
